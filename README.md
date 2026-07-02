@@ -1,109 +1,119 @@
 # 🔋 AI-Powered Battery Management System Simulator
 
-> **Machine Learning Assisted Battery Management System (BMS) with SoH Estimation, SoC Tracking, Cell Failure Prediction, and 282-Cycle Early Warning using the NASA Li-ion Battery Dataset.**
+> **Machine Learning Assisted Battery Management System (BMS) with State of Health (SoH) Estimation, State of Charge (SoC) Tracking, Cell Failure Prediction, and 282-Cycle Early Warning using the NASA Li-ion Battery Dataset.**
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red.svg)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange.svg)
-![XGBoost](https://img.shields.io/badge/XGBoost-Enabled-green.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange.svg)
+![XGBoost](https://img.shields.io/badge/XGBoost-Enabled-success.svg)
+![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen.svg)
 
 ---
 
-## 📌 Overview
+# 📌 Overview
 
-This project implements an **AI-powered Battery Management System (BMS)** capable of monitoring lithium-ion battery health using machine learning and physics-based modeling.
+This project presents an **AI-powered Battery Management System (BMS)** developed for lithium-ion batteries using the **NASA Battery Degradation Dataset**.
 
-The simulator predicts:
+The simulator combines **physics-based battery modeling** with **machine learning** to estimate battery health, predict failures, and generate comprehensive battery diagnostics.
 
-- 🔋 State of Health (SoH)
-- ⚡ State of Charge (SoC)
-- 🚨 Cell Failure
-- 📈 Remaining Useful Life (RUL)
-- 🧠 Battery Health Report
+### Major Capabilities
 
-The project is validated on the **NASA Li-ion Battery Degradation Dataset** and demonstrates **282-cycle early warning before battery end-of-life**.
+- 🔋 State of Health (SoH) Estimation
+- ⚡ State of Charge (SoC) Estimation
+- 🚨 Cell Failure Prediction
+- 📈 Remaining Useful Life Prediction
+- 📊 Battery Health Dashboard
+- 🔬 8-Cell Battery Pack Simulation
+- 📉 Early Failure Warning System
+
+---
+
+# 🏆 Key Achievement
+
+> **Detected battery degradation 282 cycles before actual End-of-Life (EOL) on NASA Battery B0006.**
+
+---
+
+# 📊 Performance Summary
+
+| Task | Best Model | Performance |
+|------|------------|------------|
+| SoH Estimation | Random Forest + Gaussian Process Regression | **R² = 0.808** |
+| SoC Estimation | BiLSTM + Attention | **R² = 0.877** |
+| Cell Failure Prediction | BiLSTM + Attention | **ROC-AUC = 0.967** |
+| Physics Baseline | Extended Kalman Filter | **R² = 0.621** |
 
 ---
 
 # 📷 Results
 
-## Battery Health Dashboard
+## 🔋 Battery Health Dashboard
 
-![Battery Dashboard](images/battery_health_dashboard.png)
-
----
-
-## Pack Health Dashboard
-
-![Pack Dashboard](images/pack_health_dashboard.png)
+![Battery Dashboard](bms_outputs/plots/battery_health_dashboard.png)
 
 ---
 
-## Early Failure Warning
+## 🔋 Pack Health Dashboard
 
-![Early Warning](images/early_warning.png)
-
----
-
-## Future SoH Prediction
-
-![Future SoH](images/future_soh_prediction.png)
+![Pack Dashboard](bms_outputs/plots/pack_health_dashboard.png)
 
 ---
 
-## ROC Comparison
+## 🚨 Early Failure Warning
 
-![ROC](images/roc_rf_vs_bilstm.png)
-
----
-
-# 🏆 Performance Summary
-
-| Task | Best Model | Performance |
-|------|------------|------------|
-| SoH Estimation | Random Forest + GPR | **R² = 0.808** |
-| SoC Estimation | BiLSTM + Attention | **R² = 0.877** |
-| Cell Failure Prediction | BiLSTM | **ROC-AUC = 0.967** |
-| Physics Baseline | Extended Kalman Filter | **R² = 0.621** |
+![Early Warning](bms_outputs/plots/early_warning.png)
 
 ---
 
-## 🚀 Key Achievement
+## 📈 Future SoH Prediction
 
-✅ Early battery failure detected **282 cycles before actual End-of-Life** on NASA Battery **B0006**.
+![Future SoH](bms_outputs/plots/future_soh_prediction.png)
+
+---
+
+## 📊 Classifier ROC Curve
+
+![Classifier ROC](bms_outputs/plots/classifier_roc.png)
+
+---
+
+## 📉 Random Forest vs BiLSTM ROC Comparison
+
+![ROC Comparison](bms_outputs/plots/roc_rf_vs_bilstm.png)
 
 ---
 
 # ✨ Features
 
-- Machine Learning Assisted Battery Management System
-- State of Health (SoH) Prediction
-- State of Charge (SoC) Estimation
+- Machine Learning Assisted Battery Management
+- State of Health Prediction
+- State of Charge Estimation
 - Cell Failure Prediction
-- Remaining Useful Life Estimation
-- Extended Kalman Filter Implementation
-- Hybrid Physics + AI Framework
-- 8-Cell Battery Pack Simulation
+- Remaining Useful Life Prediction
 - Battery Health Report Generation
+- Hybrid Physics + Machine Learning Framework
+- Extended Kalman Filter Implementation
+- Gaussian Process Regression
+- Attention-based Deep Learning
 - Manufacturing Variation Simulation
-- Gaussian Noise Injection
-- Confidence Interval Estimation using Gaussian Process Regression
+- Synthetic Battery Degradation
+- Noise Injection for Robustness
+- Confidence Interval Estimation
 
 ---
 
-# 🧠 Project Architecture
+# 🧠 Project Workflow
 
-```
+```text
 NASA Battery Dataset
         │
         ▼
-Data Cleaning
+Data Cleaning & Preprocessing
         │
         ▼
 Feature Engineering
-(19 Battery Features)
+(19 Engineered Features)
         │
         ▼
 Battery-wise Train/Test Split
@@ -112,17 +122,17 @@ Battery-wise Train/Test Split
         │              │
         ▼              ▼
 SoH Models        SoC Models
-(RF/XGB/LSTM)     (EKF/LSTM)
+RF/XGB/LSTM       EKF/LSTM
         │              │
         └──────┬───────┘
                ▼
-8-Cell Battery Pack Simulation
+8-Cell Battery Pack Simulator
                ▼
 Cell Failure Prediction
                ▼
 Battery Health Report
                ▼
-Early Warning System
+282-Cycle Early Warning
 ```
 
 ---
@@ -145,7 +155,7 @@ Early Warning System
 
 ---
 
-## Cell Failure Classification
+## Cell Failure Prediction
 
 - Random Forest
 - Support Vector Machine
@@ -154,10 +164,10 @@ Early Warning System
 
 ---
 
-# 📊 Model Comparison
+# 📈 Classification Performance
 
 | Model | Accuracy | F1 Score | ROC-AUC |
-|--------|-----------|----------|---------|
+|--------|----------|----------|---------|
 | Random Forest | 82.6% | 0.892 | 0.890 |
 | SVM | 82.0% | 0.887 | 0.882 |
 | Logistic Regression | 81.6% | 0.886 | 0.891 |
@@ -167,36 +177,47 @@ Early Warning System
 
 # ⚙ Technical Highlights
 
-- Battery-wise train/test split (No data leakage)
-- Physics-informed feature engineering
+- Battery-wise train/test split (Prevents data leakage)
+- Physics-informed battery features
+- Equivalent Circuit Model (ECM)
 - Extended Kalman Filter
-- Gaussian Process Regression uncertainty estimation
-- Resistance normalization
-- Attention-based Deep Learning
-- Synthetic battery degradation simulation
-- Manufacturing variation modeling (±5%)
+- Gaussian Process Regression
+- Deep Learning with BiLSTM + Attention
+- Manufacturing variation modelling (±5%)
+- Synthetic degradation simulation
+- Gaussian noise injection
+- Confidence interval estimation
 
 ---
 
 # 📂 Repository Structure
 
-```
+```text
 AI-Powered-BMS-Simulator
 │
 ├── bms_models/
+│   ├── *.pkl
+│   ├── *.pt
+│   └── Model Files
 │
 ├── bms_outputs/
 │   ├── plots/
+│   │   ├── battery_health_dashboard.png
+│   │   ├── pack_health_dashboard.png
+│   │   ├── early_warning.png
+│   │   ├── future_soh_prediction.png
+│   │   ├── classifier_roc.png
+│   │   ├── roc_rf_vs_bilstm.png
+│   │   └── ...
+│   │
 │   ├── model_comparison.csv
 │   ├── classifier_comparison.csv
 │   └── pack_health_report.csv
 │
-├── images/
-│
 ├── BMS_Simulator_NASA.ipynb
+├── requirements.txt
 ├── README.md
-├── LICENSE
-└── requirements.txt
+└── LICENSE
 ```
 
 ---
@@ -221,7 +242,7 @@ Install dependencies
 pip install -r requirements.txt
 ```
 
-Run
+Launch Jupyter Notebook
 
 ```bash
 jupyter notebook
@@ -233,7 +254,7 @@ Open
 BMS_Simulator_NASA.ipynb
 ```
 
-Run all cells.
+Run all cells sequentially.
 
 ---
 
@@ -254,10 +275,10 @@ Rows after preprocessing
 1984
 ```
 
-Synthetic samples
+Synthetic battery samples generated
 
 ```
-10000+
+10,000+
 ```
 
 ---
@@ -276,41 +297,42 @@ Synthetic samples
 
 ---
 
-# 📈 Outputs
+# 📊 Generated Outputs
 
 The simulator automatically generates
 
 - Battery Health Dashboard
 - Pack Health Dashboard
+- Early Warning Report
 - Future SoH Prediction
-- Early Failure Warning
 - ROC Curves
-- Model Comparison Tables
-- Classifier Comparison
-- Pack Health Report
+- Confusion Matrix
+- Model Comparison Report
+- Classifier Comparison Report
+- Battery Pack Health Report
 
 ---
 
 # 🎯 Applications
 
 - Electric Vehicles (EVs)
-- Battery Analytics
-- Battery Health Monitoring
+- Battery Management Systems
 - Battery Digital Twins
-- Energy Storage Systems
 - Predictive Maintenance
+- Battery Analytics
 - Smart Battery Packs
-- Embedded Battery Management Systems
+- Energy Storage Systems
+- Embedded Battery Monitoring
 
 ---
 
 # 📚 References
 
 1. NASA Ames Prognostics Center Battery Dataset
-2. Plett, G.L., Extended Kalman Filtering for Battery Management Systems
-3. Hu et al., Equivalent Circuit Modeling of Lithium-Ion Batteries
-4. Zhao et al., State of Health Estimation Methods
-5. Park et al., LSTM-Based Battery Remaining Useful Life Prediction
+2. G. L. Plett, "Extended Kalman Filtering for Battery Management Systems"
+3. Hu et al., "Equivalent Circuit Models for Lithium-Ion Batteries"
+4. Zhao et al., "Review of Battery State-of-Health Estimation"
+5. Park et al., "LSTM-Based Remaining Useful Life Prediction"
 
 ---
 
@@ -322,11 +344,11 @@ Electronics & Communication Engineering
 
 Thapar Institute of Engineering and Technology
 
-Interested in
+### Areas of Interest
 
 - Battery Management Systems
-- Machine Learning
 - Electric Vehicles
+- Machine Learning
 - Embedded Systems
 - Digital Electronics
 
@@ -334,11 +356,11 @@ Interested in
 
 # ⭐ Support
 
-If you found this project useful,
+If you found this repository useful,
 
-⭐ Star this repository.
+⭐ **Please consider giving it a star.**
 
-It helps the project reach more people.
+It helps the project reach more developers and researchers.
 
 ---
 
