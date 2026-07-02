@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+title: AI-Powered Battery Management System Simulator
+authors:
+  - family-names: Mahajan
+    given-names: Mridul
+message: "If you use this project, please cite it."
+license: MIT
